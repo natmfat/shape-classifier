@@ -1,0 +1,75 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+
+.app {
+    --canvas-size: 30rem;
+
+    max-width: 50rem;
+    margin: 0 auto;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    gap: 2rem;
+}
+
+.app__canvas {
+    width: var(--canvas-size);
+    height: var(--canvas-size);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem #eee;
+}
+
+.app__buttons {
+    height: var(--canvas-size);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.app__buttons button {
+    align-items: flex-start;
+    border-radius: 0.5rem;
+    background: none;
+    outline: none;
+    border: 1px solid #eee;
+    padding: 1rem;
+    cursor: pointer;
+    color: black;
+    transition: border 0.2s ease;
+}
+
+.app__buttons button:hover {
+    border: 1px solid dodgerblue;
+}
+
+#prediction {
+    background: dodgerblue;
+    border: 1px solid dodgerblue;
+    color: #fff;
+    cursor: default;
+}
+
+.loading {
+    animation: loading 1.5s linear infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
